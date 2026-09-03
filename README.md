@@ -25,12 +25,12 @@ Make sure your development environment meets the following requirements:
 ## 🛠️ Installation
 
 Follow these step-by-step instructions to get the project running locally:
-● Buka terminal / command prompt di folder root tempat menyimpan project
-● Jalankan perintah Composer untuk buat project laravel
+- Buka terminal / command prompt di folder root tempat menyimpan project
+- Jalankan perintah Composer untuk buat project laravel
 composer create-project laravel/laravel belajar-laravel
-● Di terminal/cmd, masuk ke folder tsb → cd library-system
-● Jalankan Laravel → php artisan serve
-● Melalui browser, akses ke http://127.0.0.1:8000/
+- Di terminal/cmd, masuk ke folder tsb → cd library-system
+- Jalankan Laravel → php artisan serve
+- Melalui browser, akses ke http://127.0.0.1:8000/
 
 Buka file .env dan sesuaikan koneksi database:
 DB_CONNECTION=mysql
@@ -43,7 +43,4 @@ DB_PASSWORD=
 
 # Author
 GitHub: [@l0ok-man](https://github.com/l0ok-man)
-
-https://tenor.com/view/shocked-cat-slowed-bird-gif-2022555196927695723
-
-
+<img width="354" height="329" alt="shocked-cat-slowed-bird" src="https://github.com/user-attachments/assets/76a87021-10bf-4800-8024-2156f257bfd6" />
