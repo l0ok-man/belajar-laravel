@@ -43,4 +43,7 @@ DB_PASSWORD=
 
 # Author
 GitHub: [@l0ok-man](https://github.com/l0ok-man)
-<img width="354" height="329" alt="shocked-cat-slowed-bird" src="https://github.com/user-attachments/assets/76a87021-10bf-4800-8024-2156f257bfd6" />
+
+<div align="center">
+  <img width="354" height="329" alt="shocked-cat-slowed-bird" src="https://github.com/user-attachments/assets/76a87021-10bf-4800-8024-2156f257bfd6" />
+</div>
