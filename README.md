@@ -27,12 +27,12 @@ composer create-project laravel/laravel belajar-laravel
 - Melalui browser, akses ke http://127.0.0.1:8000/
 
 Buka file .env dan sesuaikan koneksi database:
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=belajar-laravel
-DB_USERNAME=root
-DB_PASSWORD=
+- DB_CONNECTION=mysql
+- DB_HOST=127.0.0.1
+- DB_PORT=3306
+- DB_DATABASE=belajar-laravel
+- DB_USERNAME=root
+- DB_PASSWORD=
 
 
 # Author
