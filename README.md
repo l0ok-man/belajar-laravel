@@ -16,7 +16,7 @@ Make sure your development environment meets the following requirements:
 
 ---
 
-## 🛠️ Installation
+## Installation
 
 Follow these step-by-step instructions to get the project running locally:
 - Buka terminal / command prompt di folder root tempat menyimpan project
