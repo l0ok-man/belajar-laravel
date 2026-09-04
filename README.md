@@ -2,13 +2,7 @@
 
 A simple and modern web-based Library Information System built with Laravel. Designed to help manage books, members, and borrowing transactions efficiently.
 
----
 
-## Features (Fitur Utama)
-- **Book Management**: Add, edit, view, and delete book catalogs.
-- **Member Management**: Track registered library members.
-- **Borrow & Return**: Record book loans and return status.
-- **Search & Filter**: Quickly find books by title, author, or category.
 
 ---
 
