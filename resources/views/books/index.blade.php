@@ -10,7 +10,7 @@
 
     <ul>
     @foreach ($books as $book)
-        <li>{{ $book }}</li>
+        <li>{{ $book['judul'] }} - {{ $book['penulis'] }} - {{ $book['tahun'] }}</li>
     @endforeach
     </ul>
 

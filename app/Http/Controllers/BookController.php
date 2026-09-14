@@ -9,16 +9,37 @@ class BookController extends Controller
     public function index(){
         $title = "Daftar Buku";
         $description = "Daftar buku yang tersedia di perpustakaan";
+           
 
         $books = [
-            'Pemrograman PHP',
-            'Laravel untuk Pemula',
-            'Basis Data',
-            'Algoritma dan Pemrograman',
-            'Pemrograman Berorientasi Objek'
+            [
+                'judul' => 'Pemrograman PHP',
+                'penulis' => 'Andi',
+                'tahun' => 2022,
+            ],
+            [
+                'judul' => 'Laravel untuk Pemula',
+                'penulis' => 'Budi',
+                'tahun' => 2023,
+            ],
+            [
+                'judul' => 'Basis Data',
+                'penulis' => 'Citra',
+                'tahun' => 2024,
+            ],
+            [
+                'judul' => 'Algoritma dan Pemrograman',
+                'penulis' => 'Dewi',
+                'tahun' => 2025,
+            ],
+            [
+                'judul' => 'Pemrograman Berorientasi Objek',
+                'penulis' => 'Eko',
+                'tahun' => 2026,
+            ],
         ];
 
-        $stock = 5;
+        $stock = 7;
 
         return view('books.index', compact('title','description','books', 'stock'));
     }

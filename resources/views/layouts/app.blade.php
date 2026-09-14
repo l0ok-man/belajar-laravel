@@ -15,6 +15,7 @@
             <a href="{{ route('buku') }}">Buku</a> 
             <a href="{{ route('member') }}">Member</a>
             <a href="{{ route('kategori') }}">Kategori</a>
+            <a href="{{ route('dashboard') }}">Dashboard</a>
         </nav>
 
         <hr>
