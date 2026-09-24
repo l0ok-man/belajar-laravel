@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
 use Illuminate\Http\Request;
 
 class BookController extends Controller
@@ -11,33 +12,35 @@ class BookController extends Controller
         $description = "Daftar buku yang tersedia di perpustakaan";
            
 
-        $books = [
-            [
-                'judul' => 'Pemrograman PHP',
-                'penulis' => 'Andi',
-                'tahun' => 2022,
-            ],
-            [
-                'judul' => 'Laravel untuk Pemula',
-                'penulis' => 'Budi',
-                'tahun' => 2023,
-            ],
-            [
-                'judul' => 'Basis Data',
-                'penulis' => 'Citra',
-                'tahun' => 2024,
-            ],
-            [
-                'judul' => 'Algoritma dan Pemrograman',
-                'penulis' => 'Dewi',
-                'tahun' => 2025,
-            ],
-            [
-                'judul' => 'Pemrograman Berorientasi Objek',
-                'penulis' => 'Eko',
-                'tahun' => 2026,
-            ],
-        ];
+        // $books = [
+        //     [
+        //         'judul' => 'Pemrograman PHP',
+        //         'penulis' => 'Andi',
+        //         'tahun' => 2022,
+        //     ],
+        //     [
+        //         'judul' => 'Laravel untuk Pemula',
+        //         'penulis' => 'Budi',
+        //         'tahun' => 2023,
+        //     ],
+        //     [
+        //         'judul' => 'Basis Data',
+        //         'penulis' => 'Citra',
+        //         'tahun' => 2024,
+        //     ],
+        //     [
+        //         'judul' => 'Algoritma dan Pemrograman',
+        //         'penulis' => 'Dewi',
+        //         'tahun' => 2025,
+        //     ],
+        //     [
+        //         'judul' => 'Pemrograman Berorientasi Objek',
+        //         'penulis' => 'Eko',
+        //         'tahun' => 2026,
+        //     ],
+        // ];
+
+        $books = Book::all();
 
         $stock = 7;
 
