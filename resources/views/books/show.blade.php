@@ -3,7 +3,11 @@
 @section('title', $book['judul'])
 
 @section('content')
-    <h1>{{ $book['judul'] }}</h1>
-    <p>Penulis: {{ $book['penulis'] }}</p>
-    <p>Tahun: {{ $book['tahun'] }}</p>
+    <a href="{{ route('books.index') }}">Daftar Buku</a>
+    <ul>
+    <h3>{{ $book->title }}</h3>
+    <p>Penulis: {{ $book->author }}</p>
+    <p>Tahun: {{ $book->year }}</p>
+    <p>Stok: {{ $book->stock }}</p>
+    </ul>
 @endsection

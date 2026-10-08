@@ -10,14 +10,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/books', function () {
-//     //return 'Daftar Buku';
-//     return view('books.index');
-// });
-
-Route::get('/books', [BookController::class, 'index'])->name('buku');
-
-Route::get('/books/{id}', [BookController::class, 'show']);
+Route::resource('books', BookController::class);
 Route::get('/categories', [CategoryController::class, 'index'])->name('kategori');
 Route::get('/members', [MemberController::class, 'index'])->name('member');
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');

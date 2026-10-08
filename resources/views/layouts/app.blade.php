@@ -12,7 +12,7 @@
         <h1>Library System</h1>
         
         <nav>
-            <a href="{{ route('buku') }}">Buku</a> 
+            <a href="{{ route('books.index') }}">Buku</a> 
             <a href="{{ route('member') }}">Member</a>
             <a href="{{ route('kategori') }}">Kategori</a>
             <a href="{{ route('dashboard') }}">Dashboard</a>

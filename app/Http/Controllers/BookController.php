@@ -2,53 +2,86 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Book;
 use Illuminate\Http\Request;
+use App\Models\Book;
 
 class BookController extends Controller
 {
-    public function index(){
-        $title = "Daftar Buku";
-        $description = "Daftar buku yang tersedia di perpustakaan";
-           
-
-        // $books = [
-        //     [
-        //         'judul' => 'Pemrograman PHP',
-        //         'penulis' => 'Andi',
-        //         'tahun' => 2022,
-        //     ],
-        //     [
-        //         'judul' => 'Laravel untuk Pemula',
-        //         'penulis' => 'Budi',
-        //         'tahun' => 2023,
-        //     ],
-        //     [
-        //         'judul' => 'Basis Data',
-        //         'penulis' => 'Citra',
-        //         'tahun' => 2024,
-        //     ],
-        //     [
-        //         'judul' => 'Algoritma dan Pemrograman',
-        //         'penulis' => 'Dewi',
-        //         'tahun' => 2025,
-        //     ],
-        //     [
-        //         'judul' => 'Pemrograman Berorientasi Objek',
-        //         'penulis' => 'Eko',
-        //         'tahun' => 2026,
-        //     ],
-        // ];
-
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
+    {
+        $title = 'Daftar Buku';
         $books = Book::all();
-
-        $stock = 7;
-
-        return view('books.index', compact('title','description','books', 'stock'));
+        
+        return view('books.index', compact('books'));
     }
 
-    public function show($id)
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
     {
-        return "ID Buku: " . $id;
+        $title = 'Tambah Buku';
+        return view('books.create', compact('title'));
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        Book::create([
+            'title' => $request->title,
+            'author' => $request->author,
+            'year' => $request->year,
+            'stock' => $request->stock,
+        ]);
+
+        return redirect()->route('books.index');
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(Book $book)
+    {
+        $title = 'Detail Buku';
+        return view('books.show', compact('title', 'book'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(Book $book)
+    {
+        $title = 'Edit Buku';
+        return view('books.edit', compact('title', 'book'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, Book $book)
+    {
+        $book->update([
+            'title' => $request->title,
+            'author' => $request->author,
+            'year' => $request->year,
+            'stock' => $request->stock,
+        ]);
+
+        return redirect()->route('books.index');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(Book $book)
+    {
+        $book->delete();
+
+        return redirect()->route('books.index');
     }
 }
