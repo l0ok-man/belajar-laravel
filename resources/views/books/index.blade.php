@@ -1,15 +1,20 @@
 @extends('layouts.app')
 
-@section('title', '$title')
+@section('title', 'Daftar Buku')
 
 @section('content')
+    @if (session('success'))
+        <p>{{ session('success') }}</p>
+    @endif
+
     <a href="{{ route('books.create') }}">Tambah Buku</a>
     <ul>
         @foreach ($books as $book)
             <h3>{{ $book->title }}</h3>
             <a href="{{ route('books.show', $book) }}">Detail Buku</a>
             <a href="{{ route('books.edit', $book ) }}">Edit Buku</a>
-            <form action="{{ route('books.destroy', $book) }}" method="POST">
+            <form action="{{ route('books.destroy', $book) }}" method="POST"
+                onsubmit='return confirm("Yakin ingin menghapus buku \"{{ $book->title }}\" ini ?")'>
                 @csrf
                 @method('DELETE')
 

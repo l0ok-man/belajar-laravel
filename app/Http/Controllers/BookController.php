@@ -31,15 +31,19 @@ class BookController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        Book::create([
-            'title' => $request->title,
-            'author' => $request->author,
-            'year' => $request->year,
-            'stock' => $request->stock,
+    {   
+        $validated = $request->validate([
+            'title' => 'required|string|min:2|max:255|unique:books,title',
+            'author' => 'required|string|min:3|max:255',
+            'year' => 'required|integer|digits:4|min:1900|max:' . (date('Y') + 1),
+            'stock' => 'required|integer|min:0|max:10000',
         ]);
+            
+        Book::create($validated);
 
-        return redirect()->route('books.index');
+        return redirect()
+                ->route('books.index')
+                ->with('success', 'Buku berhasil ditambahkan!');
     }
 
     /**
@@ -65,12 +69,25 @@ class BookController extends Controller
      */
     public function update(Request $request, Book $book)
     {
-        $book->update([
-            'title' => $request->title,
-            'author' => $request->author,
-            'year' => $request->year,
-            'stock' => $request->stock,
+        $validated = $request->validate([
+            'title' => ['required', 'string', 'min:2', 'max:255', Rule::unique('books')->ignore($book->id)],
+            'author' => 'required|string|min:3|max:255',
+            'year' => 'required|integer|digits:4|min:1900|max:' . (date('Y') + 1),
+            'stock' => 'required|integer|min:0|max:10000',
         ]);
+            
+        $book->update($validated);
+
+        return redirect()
+                ->route('books.index')
+                ->with('success', 'Data Buku berhasil diubah!');
+
+        // $book->update([
+        //     'title' => $request->title,
+        //     'author' => $request->author,
+        //     'year' => $request->year,
+        //     'stock' => $request->stock,
+        // ]);
 
         return redirect()->route('books.index');
     }
