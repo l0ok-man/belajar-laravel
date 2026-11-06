@@ -15,7 +15,14 @@
             <a href="{{ route('books.index') }}">Buku</a> 
             <a href="{{ route('member') }}">Member</a>
             <a href="{{ route('kategori') }}">Kategori</a>
-            <a href="{{ route('dashboard') }}">Dashboard</a>
+            <a href="{{ route('dashboard') }}">Dashboard</a>            
+
+            @can('manage-users')
+                <a href="{{ route('users.index') }}">
+                Kelola Pengguna
+                </a>
+            @endcan
+
             <form action="{{ route ('logout') }}" method="POST">
                 @csrf
                 <button type="submit">Logout</button>

@@ -28,5 +28,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/categories', [CategoryController::class, 'index'])->name('kategori');
     Route::get('/members', [MemberController::class, 'index'])->name('member');
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-
+    Route::get('/users', function () {  
+        return 'Halo';
+    })->middleware('can:manage-users')->name('users.index');
 });
